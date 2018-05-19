@@ -1,4 +1,4 @@
-function loadImage(url) {
+export function loadImage(url) {
     return new Promise(resolve => {
         const image = new Image();
         image.addEventListener('load', () => {
@@ -8,7 +8,7 @@ function loadImage(url) {
     })
 }
 
-const canvas = document.getElementById('screen');
-const context = canvas.getContext('2d');
-
-context.fillRect(0, 0, 50, 50);
+export function loadLevel (name) {
+    return fetch(`./levels/${name}.json`)
+    .then(r => r.json())
+}
