@@ -5,10 +5,10 @@ export function loadImage(url) {
             resolve(image);
         });
         image.src = url;
-    })
+    });
 }
 
-export function loadLevel (name) {
-    return fetch(`./levels/${name}.json`)
-    .then(r => r.json())
+export function loadLevel(name) {
+    return fetch(`/levels/${name}.json`)
+    .then(r => r.json());
 }
